@@ -80,12 +80,15 @@ nav li {
   border-bottom: 1px solid #F3E7D3;
 }
 
-nav a:link {
+nav a:link,
+nav a:visited {
   color: #F3E7D3;
 }
 
-nav a:visited {
-  color: #D9A441;
+nav a.active {
+  background-color: #F3E7D3;
+  color: #7A1F1F;
+  font-weight: bold;
 }
 
 nav a:hover {
@@ -103,13 +106,21 @@ main h2,
 main h3,
 main p,
 main div,
+main figure,
 main table {
   padding-left: 1em;
   padding-right: 1em;
 }
 
+main > p {
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #homehero,
 #historyhero,
+#designhero,
 #symbolshero {
   min-height: 260px;
   padding: 0;
@@ -127,7 +138,20 @@ main table {
 .feature {
   background-color: #FFF8EA;
   border: 2px solid #7A1F1F;
+  color: #1F1B18;
+  display: block;
   padding: 1em;
+  text-decoration: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.feature:hover {
+  border-color: #D9A441;
+  transform: translateY(-3px);
+}
+
+.feature:visited {
+  color: #1F1B18;
 }
 
 .feature-image {
@@ -137,6 +161,38 @@ main table {
   margin-bottom: 1em;
   object-fit: cover;
   border: 1px solid #28313B;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1.25em;
+}
+
+figure {
+  background-color: #FFF8EA;
+  border: 2px solid #7A1F1F;
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 1px solid #28313B;
+}
+
+figcaption {
+  color: #7A1F1F;
+  font-weight: bold;
+  padding-top: 0.75em;
+  text-align: center;
 }
 
 table {
@@ -196,6 +252,10 @@ footer a:visited {
   .feature-row {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -209,6 +269,7 @@ footer a:visited {
   main h3,
   main p,
   main div,
+  main figure,
   main table {
     padding-left: 2em;
     padding-right: 2em;
