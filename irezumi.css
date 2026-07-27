@@ -49,6 +49,7 @@ h1 {
 
 h2 {
   color: #7A1F1F;
+  text-align: center;
 }
 
 h3 {
@@ -196,17 +197,20 @@ figcaption {
 }
 
 table {
-  margin: auto;
+  margin: 1.5em auto;
   width: 90%;
-  border-spacing: 0;
+  max-width: 950px;
+  min-width: 680px;
+  border-collapse: collapse;
   border: 1px solid #7A1F1F;
 }
 
 td,
 th {
-  padding: 10px;
+  padding: 0.85em 1em;
   border-bottom: 1px solid #7A1F1F;
   text-align: left;
+  vertical-align: top;
 }
 
 th {
@@ -216,6 +220,10 @@ th {
 
 tr:nth-of-type(odd) {
   background-color: #E5D2B8;
+}
+
+tr:nth-of-type(even) {
+  background-color: #FFF8EA;
 }
 
 footer {
